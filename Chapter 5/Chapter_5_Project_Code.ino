@@ -79,8 +79,8 @@ void reconnect() {
     // Attempt to connect
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
-      // ... and resubscribe
-      client.subscribe("inTopic/LED");
+      // resubscribe to the specific topic
+	  client.subscribe("project2/led");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());

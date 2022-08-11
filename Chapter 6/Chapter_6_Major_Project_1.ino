@@ -101,7 +101,7 @@ void reconnect() {
       client.subscribe("IoTWeatherStation/altitude");
       client.subscribe("IoTWeatherStation/TVOC");
       client.subscribe("IoTWeatherStation/eCO2");
- client.subscribe("IoTWeatherStation/hic");
+      client.subscribe("IoTWeatherStation/hic");
 
     } else {
       Serial.print("failed, rc=");

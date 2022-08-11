@@ -1,0 +1,33 @@
+// Manual Home Automation Code Snippet
+
+#define S1 32
+#define S2 35
+#define S3 34
+#define S4 39
+
+// You can access the LEDs and Buzzer through this pins.
+#define LED1 26
+#define LED2 25
+#define LED3 27
+#define Buzzer 21
+
+void Call_ManualAutomation()
+{
+Serial.println("Manual Automation");
+digitalWrite(R1, digitalRead(S1));
+Serial.println("Relay-1: ");
+Serial.println(digitalRead(S1));
+delay(1);
+digitalWrite(R2, digitalRead(S2));
+Serial.println("Relay-2: ");
+Serial.println(digitalRead(S2));
+delay(1);
+digitalWrite(R3, digitalRead(S3));
+Serial.println("Relay-3: ");
+Serial.println(digitalRead(S3));
+delay(1);
+digitalWrite(R4, digitalRead(S4));
+Serial.println("Relay-4: ");
+Serial.println(digitalRead(S4));
+delay(1);
+}

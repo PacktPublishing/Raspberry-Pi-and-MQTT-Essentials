@@ -1,0 +1,19 @@
+var temperature=msg.payload;
+var alert_flag=context.get("alert_flag");
+if(typeof alert_flag=="undefined")
+alert_flag=false;
+
+if (temperature>35 && !alert_flag)
+{
+    alert_flag=true;
+    msg.alert=1;
+    context.set("alert_flag",alert_flag);
+    return msg;
+}
+if (temperature<=35 && alert_flag)
+{
+    alert_flag=false;
+    msg.alert=0;
+    context.set("alert_flag",alert_flag);
+    return msg;
+}

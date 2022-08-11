@@ -76,6 +76,8 @@ void reconnect() {
     // Attempt to connect
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
+      // Once connected, publish an announcement...
+      client.publish("outTopic", "hello world");
       // ... and resubscribe
       client.subscribe("inTopic/LED");
     } else {
@@ -92,7 +94,6 @@ void reconnect() {
 void setup() {
   
   pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
-  digitalWrite(BUILTIN_LED, HIGH);   // Turn off the LED initially.
   Serial.begin(115200);      // Serial port opened with baud rate 115200
   setup_wifi();
   client.setServer(mqtt_server, 1883);   // Connect to the MQTT Server

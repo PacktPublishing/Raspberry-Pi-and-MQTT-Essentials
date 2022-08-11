@@ -1,0 +1,17 @@
+var temp=msg.payload;
+msg.to="<reciever email address>";
+var d =new Date();
+var message="";
+if(msg.alarm)
+{
+msg.topic="High Temperature Alert!";
+message=" ";
+}
+else
+{
+	message=" Temperature is back to normal now. The
+current temperature is ";
+	msg.topic="Temperature Alarm Reset.";
+}
+msg.payload="time:"+d+message +msg.payload;
+return msg;
