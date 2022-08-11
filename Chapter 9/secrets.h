@@ -2,8 +2,8 @@
  
 #define SECRET
  
-const char WIFI_SSID[] = "...";               //Wifi SSID Name
-const char WIFI_PASSWORD[] = "...";           //Wifi Password
+const char WIFI_SSID[] = "wifi_ssid";               //Wifi SSID Name
+const char WIFI_PASSWORD[] = "wifi_password";           //Wifi Password
  
 #define THINGNAME "..."    // Name of your thing in AWS
  

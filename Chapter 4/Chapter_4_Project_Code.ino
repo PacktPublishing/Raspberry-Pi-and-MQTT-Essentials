@@ -8,9 +8,9 @@
 #include <PubSubClient.h>
 
 // Update these with credentials suitable for your network.
-const char* ssid = "Dhairya";
-const char* password = "9428914308";
-const char* mqtt_server = "192.168.1.22";
+const char* ssid = "wifi_ssid";
+const char* password = "wifi_password";
+const char* mqtt_server = "Pi's ip address";
 
 // Variable and Object Declaration
 WiFiClient espClient;
