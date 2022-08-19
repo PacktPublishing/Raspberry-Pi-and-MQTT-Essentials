@@ -1,6 +1,9 @@
 /*
+ * Chapter 5 : Node-RED on Raspberry Pi
  * Project 2 : Node MCU LED control using Node RED and MQTT
  * Developer : Dhairya Parikh
+ * Description : This code let's you setup your NodeMCU in such a way that you can control its 
+ * onchip LED through Node RED using MQTT.
  */
 
 // Import the required Libraries
@@ -76,10 +79,8 @@ void reconnect() {
     // Attempt to connect
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
-      // Once connected, publish an announcement...
-      client.publish("outTopic", "hello world");
-      // ... and resubscribe
-      client.subscribe("inTopic/LED");
+      // resubscribe to the specific topic
+	  client.subscribe("project2/led");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -93,12 +94,20 @@ void reconnect() {
 // Main setup function
 void setup() {
   
-  pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
-  Serial.begin(115200);      // Serial port opened with baud rate 115200
+  // Initialize the BUILTIN_LED pin as an output
+  pinMode(BUILTIN_LED, OUTPUT);
+  // Turn off the LED initially. (NodeMCU LED is low signal activated)
+  digitalWrite(BUILTIN_LED, HIGH);
+  // Serial port opened
+  Serial.begin(115200);
+  // Call the setup_wifi function
   setup_wifi();
-  client.setServer(mqtt_server, 1883);   // Connect to the MQTT Server
-  client.setCallback(callback);     // Define the Callback Function 
-  client.subscribe("inTopic/LED");      // Subscribe to this topic
+  // Connect to the MQTT Server
+  client.setServer(mqtt_server, 1883);
+  // Define the Callback Function
+  client.setCallback(callback);
+  // Subscribe to this topic
+  client.subscribe("project2/led");
 }
 
 // Main Loop Function
@@ -108,15 +117,6 @@ void loop() {
     reconnect();   // Run the reconnect function till a connection to the MQTT server is established
   }
   client.loop();
-  unsigned long now = millis();
-  if (now - lastMsg > 2000) {
-  lastMsg = now;
-  ++value;
-  snprintf (msg, MSG_BUFFER_SIZE, "hello world #%ld",
-  value);
-  Serial.print("Publish message: ");
-  Serial.println(msg);
-  client.publish("outTopic", msg);
   }
 }
 
