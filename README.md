@@ -60,3 +60,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 ## Get to Know the Author
 **Dhairya Parikh**
 currently works as a data engineer at Accenture, where he builds efficient data products to help their clients get the most out of their data. He completed his undergraduate studies in Electronics engineering from BVM Engineering College, Anand. He is a seasoned project developer with several award-winning projects under his belt. His most recent literary works include several articles written for the Circuit Cellar Magazine. Most of his articles and projects are based on Internet of Things and Machine Learning. He is an open-source enthusiast with an interest in building projects that bring a positive impact in people’s lives using new development hardware and writing about them in his spare time.
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781803244488">https://packt.link/free-ebook/9781803244488 </a> </p>
