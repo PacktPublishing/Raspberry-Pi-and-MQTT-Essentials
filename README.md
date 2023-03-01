@@ -55,6 +55,11 @@ With the following software and hardware list you can run all code files present
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://packt.link/860jg).
 
+## Errata
+* Page 55: In the section "Practical Demonstration of MQTT in action" of chapter 2, the command in step 9 for publishing the message/temperature is incorrect. 
+In the example, it uses the switch "-p" as follows: ```mosquitto_pub -h -t sensors/temperature -p "27"```.
+The correct switch should be "-m": ```mosquitto_pub -h -t sensors/temperature -m "27"```
+
 ### Related products
 * MQTT Essentials - A Lightweight IoT Protocol [[Packt]](https://www.packtpub.com/product/mqtt-essentials-a-lightweight-iot-protocol/9781787287815?utm_source=github&utm_medium=repository&utm_campaign=9781787287815) [[Amazon]](https://www.amazon.com/dp/1787287815)
 
