@@ -56,8 +56,8 @@ With the following software and hardware list you can run all code files present
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://packt.link/860jg).
 
 ## Errata
-* Page 55: In the section "Practical Demonstration of MQTT in action" of chapter 2, the command in step 9 for publishing the message/temperature is incorrect. 
-In the example, it uses the switch "-p" as follows: ```mosquitto_pub -h -t sensors/temperature -p "27"```.
+* Page 55: In the section "Practical Demonstration of MQTT in action" of chapter 2, the command in step 9 for publishing the message/temperature is incorrect.<br> 
+In the example, it uses the switch "-p" as follows: ```mosquitto_pub -h -t sensors/temperature -p "27"```<br>
 The correct switch should be "-m": ```mosquitto_pub -h -t sensors/temperature -m "27"```
 
 ### Related products
